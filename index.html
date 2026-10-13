@@ -1,0 +1,252 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nicola Zheng - Data Scientist &amp; GenAI Tech Lead</title>
+    <style>
+      :root {
+        --bg: #0d0d0d;
+        --fg: #e8e6d3;
+        --accent: #59612a;
+        --section-bg: #161616;
+      }
+      body {
+        background: var(--bg);
+        color: var(--fg);
+        font-family: -apple-system, SF Mono, Monaco, Inconsolata, monospace;
+        line-height: 1.5;
+        max-width: 100%;
+        padding: 2rem;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: 280px 1fr;
+        gap: 2rem;
+      }
+      .contact, .nav {
+        font-size: 0.75rem;
+      }
+      .block {
+        margin-bottom: 1.5rem;
+      }
+      h1, h2, h3 {
+        color: var(--fg);
+        word-break: break-word;
+      }
+      h1 {
+        font-size: 2rem;
+        margin: 0 0 0.5rem 0;
+      }
+      .subtitle {
+        font-size: 1.125rem;
+        color: var(--accent);
+      }
+      .nav a {
+        color: var(--fg);
+        text-decoration: none;
+      }
+      .nav a:hover {
+        text-decoration: underline;
+      }
+      h2.block-title {
+        background: var(--accent);
+        color: var(--bg);
+        padding: 0.5rem 0.75rem;
+        font-size: 0.9rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+      }
+      .experience, .education, .skills {
+        margin-bottom: 2rem;
+      }
+      .exp-item, .edu-item {
+        display: grid;
+        grid-template-columns: 140px 1fr auto;
+        gap: 1.5rem;
+      }
+      .dates {
+        color: var(--accent);
+      }
+      .company {
+        font-style: italic;
+      }
+      ul {
+        margin: 0.5rem 0 0 0;
+        padding-left: 1.5rem;
+      }
+      li {
+        margin: 0.4rem 0;
+      }
+      .tech-stack {
+        font-size: 0.85rem;
+        color: var(--accent);
+      }
+      @media (max-width: 768px) {
+        .grid {
+          grid-template-columns: 1fr;
+        }
+        .exp-item, .edu-item {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid">
+      <aside>
+        <div class="contact block">
+          <h1>Nicola Zheng</h1>
+          <p class="subtitle">Data Scientist &amp; GenAI Tech Lead</p>
+          <br>
+          <div style="font-size: 0.8rem;">
+            <strong>Location:</strong><br />
+            Milan, Italy<br /><br />
+            <strong>Phone:</strong><br />
+            +39 3920794883<br /><br />
+            <strong>Email:</strong><br />
+            nicola.zheng@gmail.com<br /><br />
+            <strong>LinkedIn:</strong><br />
+            @nicolazheng
+          </div>
+        </div>
+
+        <div class="block">
+          <h2.block-title class="block-title">Profile</h2>
+          <p>Data scientist with 6 years of experience at Accenture, grounded in a statistics background (MSc and BSc, University of Bologna) with a strong
+  interest in informatics and statistics. Started in classical Machine Learning and Computer Vision, delivering production solutions for the automotive and
+  resource industries, and since the rise of Generative AI I have led teams building RAG systems and multi-agent solutions based on MCP and A2A protocols,
+  from prototype to deployment on Azure and Google Cloud.</p>
+        </div>
+
+        <div class="block">
+          <h2.block-title class="block-title">Languages</h2>
+          <ul>
+            <li><strong>Italian</strong> — native</li>
+            <li><strong>English</strong> — proficient</li>
+            <li><strong>Chinese</strong> — basic</li>
+            <li><strong>French</strong> — basic</li>
+          </ul>
+        </div>
+
+        <div class="block">
+          <h2.block-title class="block-title">Technical Skills</h2>
+          <p><strong>Languages &amp; data:</strong> Python, PySpark, SQL, Bash</p>
+          <p><strong>GenAI:</strong> RAG, LLM agents, MCP, A2A, prompt design and evaluation</p>
+          <p><strong>ML &amp; CV:</strong> Keras, Scikit-learn, OpenCV, GluonCV, OCR, predictive maintenance</p>
+          <p><strong>Cloud &amp; MLOps:</strong> Azure, Google Cloud Platform, Databricks, Kubernetes, FastAPI, Git</p>
+          <p><strong>Visualization:</strong> Plotly, Kibana, Seaborn</p>
+          <p><strong>Other:</strong> LaTeX</p>
+        </div>
+      </aside>
+
+      <main>
+        <section class="experience">
+          <h2.block-title class="block-title">Experience</h2>
+
+          <article class="exp-item">
+            <span class="dates">2024 — now</span>
+            <div>
+              <p><strong>Consultant &amp; Tech Lead — Generative AI</strong><br />Accenture, Milan</p>
+              <ul>
+                <li>Lead small cross-functional teams delivering Generative AI projects end to end: solution design, development, deployment and
+  client-facing technical guidance.</li>
+                <li>Design RAG pipelines that turn heterogeneous documents into retrievable knowledge bases for question answering and search.</li>
+                <li>Orchestrate multi-agent systems (MCP, A2A) that gather and synthesize information from web research, documents and SQL tables.</li>
+                <li>Mentor junior colleagues and review code and architecture choices.</li>
+              </ul>
+              <div class="tech-stack">
+                Azure / Google Cloud Platform / GenAI models / RAG / A2A Agent / MCP / Bash / K8s
+              </div>
+            </div>
+          </article>
+
+          <article class="exp-item">
+            <span class="dates">2020 — 2024</span>
+            <div>
+              <p><strong>Analyst — Data Science</strong><br />Accenture, Milan</p>
+              <ul>
+                <li>Built predictive maintenance models on real-time vehicle telemetry and geospatial data, powering customized alerts to improve after-sales
+  customer service in the automotive sector.</li>
+                <li>Developed Computer Vision and OCR solutions on cloud services to classify documentsand extract information automatically.</li>
+                <li>Processed large datasets with distributed pipelines, and exposed models as APIs andinteractive dashboards.</li>
+              </ul>
+              <div class="tech-stack">
+                Azure / PySpark / Databricks / FastAPI / Keras / OpenCV / GluonCV / Plotly
+              </div>
+            </div>
+          </article>
+
+          <article class="exp-item">
+            <span class="dates">2020</span>
+            <div>
+  from web research, documents and SQL tables.</li>
+                <li>Mentor junior colleagues and review code and architecture choices.</li>
+              </ul>
+              <div class="tech-stack">
+                Azure / Google Cloud Platform / GenAI models / RAG / A2A Agent / MCP / Bash / K8s
+              </div>
+            </div>
+          </article>
+
+          <article class="exp-item">
+            <span class="dates">2020 — 2024</span>
+            <div>
+              <p><strong>Analyst — Data Science</strong><br />Accenture, Milan</p>
+              <ul>
+                <li>Built predictive maintenance models on real-time vehicle telemetry and geospatial
+  data, powering customized alerts to improve after-sales customer service in the automotive
+  sector.</li>
+                <li>Developed Computer Vision and OCR solutions on cloud services to classify documents
+  and extract information automatically.</li>
+                <li>Processed large datasets with distributed pipelines, and exposed models as APIs and
+  interactive dashboards.</li>
+              </ul>
+              <div class="tech-stack">
+                Azure / PySpark / Databricks / FastAPI / Keras / OpenCV / GluonCV / Plotly
+              </div>
+            </div>
+          </article>
+
+          <article class="exp-item">
+            <span class="dates">2020</span>
+            <div>
+              <p><strong>Data Science Intern</strong><br />Whalebone, Brno</p>
+              <ul>
+                <li>Analyse DNS logs and Internet traffic, and visualized user and network behaviour in
+  dashboards.</li>
+                <li>Clustered DNS queries and trained machine learning models to distinguish legitimate
+  from malicious domains.</li>
+              </ul>
+              <div class="tech-stack">
+                Python / Pandas / Keras / Scikit-learn / Seaborn / Kibana
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="education">
+          <h2.block-title class="block-title">Education</h2>
+
+          <article class="edu-item">
+            <span class="dates">2018 — 2020</span>
+            <div>
+              <p><strong>MSc Statistical Sciences</strong><br />Alma Mater Studiorum — University of
+  Bologna</p>
+              <p>Data Science curriculum. Erasmus+ exchange in Brno, with a focus on cybersecurity.</p>
+            </div>
+          </article>
+
+          <article class="edu-item">
+            <span class="dates">2015 — 2018</span>
+            <div>
+              <p><strong>BSc Statistical Sciences</strong><br />Alma Mater Studiorum — University of
+  Bologna</p>
+              <p>Biodemographic curriculum.</p>
+            </div>
+          </article>
+        </section>
+      </main>
+    </div>
+  </body>
+  </html>
