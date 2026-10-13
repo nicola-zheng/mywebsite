@@ -1,250 +1,536 @@
-  <!DOCTYPE html>
-  <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nicola Zheng - Data Scientist &amp; GenAI Tech Lead</title>
-    <style>
-      :root {
-        --bg: #828282a7;
-        --fg: #e8e6d3;
-        --accent: #eca90d;
-        --section-bg: #975a00;
-      }
-      body {
-        background: var(--bg);
-        color: var(--fg);
-        font-family: -apple-system, SF Mono, Monaco, Inconsolata, monospace;
-        line-height: 1.5;
-        max-width: 100%;
-        padding: 2rem;
-      }
-      .grid {
-        display: grid;
-        grid-template-columns: 280px 1fr;
-        gap: 2rem;
-      }
-      .contact, .nav {
-        font-size: 0.75rem;
-      }
-      .block {
-        margin-bottom: 1.5rem;
-      }
-      h1, h2, h3 {
-        color: var(--fg);
-        word-break: break-word;
-      }
-      h1 {
-        font-size: 2rem;
-        margin: 0 0 0.5rem 0;
-      }
-      .subtitle {
-        font-size: 1.125rem;
-        color: var(--accent);
-      }
-      .nav a {
-        color: var(--fg);
-        text-decoration: none;
-      }
-      .nav a:hover {
-        text-decoration: underline;
-      }
-      h2.block-title {
-        background: var(--accent);
-        color: var(--bg);
-        padding: 0.5rem 0.75rem;
-        font-size: 0.9rem;
-        font-weight: 600;
-        margin-bottom: 1rem;
-      }
-      .experience, .education, .skills {
-        margin-bottom: 2rem;
-      }
-      .exp-item, .edu-item {
-        display: grid;
-        grid-template-columns: 140px 1fr auto;
-        gap: 1.5rem;
-      }
-      .dates {
-        color: var(--accent);
-      }
-      .company {
-        font-style: italic;
-      }
-      ul {
-        margin: 0.5rem 0 0 0;
-        padding-left: 1.5rem;
-      }
-      li {
-        margin: 0.4rem 0;
-      }
-      .tech-stack {
-        font-size: 0.85rem;
-        color: var(--accent);
-      }
-      @media (max-width: 768px) {
-        .grid {
-          grid-template-columns: 1fr;
-        }
-        .exp-item, .edu-item {
-          grid-template-columns: 1fr;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <div class="grid">
-      <aside>
-        <div class="contact block">
-          <h1>Nicola Zheng</h1>
-          <p class="subtitle">Data Scientist &amp; GenAI Tech Lead</p>
-          <br>
-          <div style="font-size: 0.8rem;">
-            <strong>Location:</strong><br />
-            Milan, Italy<br /><br />
-            <strong>Email:</strong><br />
-            nicola.zheng@gmail.com<br /><br />
-            <strong>LinkedIn:</strong><br />
-            @nicolazheng
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nicola Zheng - Data Scientist &amp; GenAI Tech Lead</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,300..800&family=Figtree:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F3F1FB;
+    --paper-2:#E9E5F8;
+    --ink:#1C1745;
+    --muted:#625D86;
+    --mist:#D6D0F0;
+    --violet:#5A3FF0;
+    --amber:#FFAE1A;
+    --display:"Bricolage Grotesque", system-ui, sans-serif;
+    --body:"Figtree", system-ui, sans-serif;
+    --wrap:min(1180px, 100% - 3rem);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;scroll-padding-top:5rem}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--body);
+    font-size:1.0625rem;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit}
+  :focus-visible{outline:2px solid var(--violet);outline-offset:3px;border-radius:4px}
+  ::selection{background:var(--amber);color:var(--ink)}
+
+  /* ---------- nav ---------- */
+  .nav{
+    position:fixed;inset:0 0 auto 0;z-index:20;
+    backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+    background:color-mix(in srgb, var(--paper) 78%, transparent);
+    border-bottom:1px solid transparent;
+    transition:border-color .3s;
+  }
+  .nav.scrolled{border-bottom-color:var(--mist)}
+  .nav-inner{width:var(--wrap);margin:auto;display:flex;align-items:center;justify-content:space-between;height:4rem}
+  .mark{font-family:var(--display);font-weight:800;font-size:1.25rem;text-decoration:none;letter-spacing:-.02em}
+  .mark span{color:var(--violet)}
+  .nav ul{list-style:none;display:flex;gap:1.75rem}
+  .nav ul a{text-decoration:none;font-size:.95rem;color:var(--muted);position:relative;padding:.25rem 0;transition:color .2s}
+  .nav ul a::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:2px;background:var(--violet);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+  .nav ul a:hover,.nav ul a.active{color:var(--ink)}
+  .nav ul a:hover::after,.nav ul a.active::after{transform:scaleX(1)}
+
+  /* ---------- hero ---------- */
+  .hero{
+    min-height:100svh;
+    width:var(--wrap);margin:auto;
+    display:grid;grid-template-columns:1.05fr 1fr;align-items:center;gap:3rem;
+    padding:6rem 0 3rem;
+  }
+  .hero h1{
+    font-family:var(--display);
+    font-weight:800;
+    font-stretch:78%;
+    font-size:clamp(4.2rem, 10.5vw, 9.6rem);
+    line-height:.86;
+    letter-spacing:-.045em;
+  }
+  .hero h1 .line{display:block;overflow:hidden;padding-bottom:.06em}
+  .hero h1 .line span{display:inline-block;animation:rise 1s cubic-bezier(.2,.8,.2,1) both}
+  .hero h1 .line:nth-child(2) span{animation-delay:.12s;color:var(--violet)}
+  .role{
+    font-family:var(--display);font-weight:500;font-stretch:90%;
+    font-size:clamp(1.3rem,2.2vw,1.75rem);
+    margin-top:1.4rem;letter-spacing:-.01em;
+    animation:fade .9s .35s both;
+  }
+  .contact{
+    display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:1rem 2.5rem;
+    margin-top:2.75rem;animation:fade .9s .5s both;
+  }
+  .contact dt{font-size:.85rem;color:var(--muted);margin-bottom:.15rem}
+  .contact dd{font-weight:600}
+  .contact a{text-decoration:none;background:linear-gradient(var(--amber),var(--amber)) 0 100%/0 40% no-repeat;transition:background-size .35s}
+  .contact a:hover{background-size:100% 40%}
+
+  .board{position:relative;aspect-ratio:1/1.02;width:100%;animation:fade 1.2s .2s both}
+  .board canvas{position:absolute;inset:0;width:100%;height:100%;cursor:pointer}
+
+  @keyframes rise{from{transform:translateY(105%)}to{transform:none}}
+  @keyframes fade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+
+  /* ---------- sections ---------- */
+  section.block{width:var(--wrap);margin:auto;padding:6rem 0}
+  .block + .block{border-top:1px solid var(--mist)}
+  h2{
+    font-family:var(--display);font-weight:700;font-stretch:85%;
+    font-size:clamp(2.4rem,5vw,3.75rem);line-height:1;letter-spacing:-.035em;
+    margin-bottom:2.75rem;
+  }
+  h3{font-family:var(--display);font-weight:700;font-size:1.45rem;line-height:1.2;letter-spacing:-.015em}
+
+  .profile{display:grid;grid-template-columns:1fr 2.2fr;gap:3rem;align-items:start}
+  .profile p{
+    font-family:var(--display);font-weight:400;font-stretch:95%;
+    font-size:clamp(1.3rem,2vw,1.7rem);line-height:1.42;letter-spacing:-.012em;
+    max-width:44ch;
+  }
+
+  /* skills */
+  .skills{display:grid;grid-template-columns:1fr 2.2fr;gap:3rem}
+  .skills h2{font-size:clamp(1.9rem,3.4vw,2.6rem);margin-bottom:1.75rem}
+  .langs{list-style:none;display:grid;gap:1.1rem}
+  .langs li{display:grid;grid-template-columns:1fr auto;align-items:center;gap:.3rem 1rem}
+  .langs strong{font-family:var(--display);font-size:1.25rem;font-weight:700}
+  .langs .lvl{color:var(--muted);font-size:.95rem}
+  .meter{grid-column:1/-1;display:flex;gap:4px}
+  .meter i{flex:1;height:6px;border-radius:3px;background:var(--mist);transform-origin:left;transition:background .5s}
+  .langs li.on .meter i.f{background:var(--violet)}
+  .langs li.on .meter i.f:nth-child(2){transition-delay:.12s}
+  .langs li.on .meter i.f:nth-child(3){transition-delay:.24s}
+  .langs li.on .meter i.f:nth-child(4){transition-delay:.36s}
+
+  .groups{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem 2.5rem}
+  .group h4{font-size:.95rem;font-weight:600;color:var(--muted);margin-bottom:.6rem}
+  .chips{display:flex;flex-wrap:wrap;gap:.45rem}
+  .chip{
+    font-size:.92rem;font-weight:500;line-height:1;
+    padding:.5rem .8rem;border-radius:999px;
+    background:#fff;border:1px solid var(--mist);
+    transition:background .2s,border-color .2s,color .2s,opacity .25s,transform .2s;
+    cursor:default;
+  }
+  .chips.small .chip{font-size:.82rem;padding:.4rem .65rem;background:transparent}
+  body.filtering .chip:not(.match){opacity:.35}
+  .chip.match{background:var(--violet);border-color:var(--violet);color:#fff;transform:translateY(-2px)}
+  .hint{margin-top:2rem;font-size:.9rem;color:var(--muted)}
+
+  /* timeline */
+  .timeline{position:relative;display:grid;gap:4rem;--rail:10.5rem}
+  .rail{position:absolute;top:.6rem;bottom:0;left:calc(var(--rail) + 1.5rem);width:2px;background:var(--mist);border-radius:2px}
+  .rail b{position:absolute;inset:0;background:var(--violet);transform-origin:top;transform:scaleY(var(--p,0));border-radius:2px}
+  .entry{display:grid;grid-template-columns:var(--rail) 1fr;column-gap:3rem;position:relative}
+  .entry::before{
+    content:"";position:absolute;left:calc(var(--rail) + 1.5rem + 1px);top:.55rem;
+    width:15px;height:15px;border-radius:50%;
+    background:var(--paper);border:2px solid var(--mist);
+    transform:translateX(-50%);transition:border-color .4s,background .4s,box-shadow .4s;
+  }
+  .entry.reached::before{border-color:var(--violet);background:var(--amber);box-shadow:0 0 0 6px color-mix(in srgb,var(--violet) 14%,transparent)}
+  .year{font-family:var(--display);font-weight:600;font-stretch:85%;font-size:1.15rem;color:var(--muted);text-align:right;padding-top:.15rem;font-variant-numeric:tabular-nums}
+  .entry.reached .year{color:var(--ink)}
+  .body{max-width:68ch}
+  .org{color:var(--muted);margin:.25rem 0 1rem}
+  .body ul{list-style:none;display:grid;gap:.6rem;margin-bottom:1.25rem}
+  .body li{padding-left:1.4rem;position:relative}
+  .body li::before{content:"";position:absolute;left:0;top:.68em;width:.6rem;height:2px;background:var(--violet)}
+  .body p.note{max-width:60ch}
+
+  footer{width:var(--wrap);margin:auto;padding:3rem 0 4rem;border-top:1px solid var(--mist);display:flex;justify-content:space-between;align-items:center;gap:1rem}
+  footer .mark{font-size:1rem}
+  .top{font-size:.95rem;color:var(--muted);text-decoration:none}
+  .top:hover{color:var(--violet)}
+
+  /* responsive */
+  @media (max-width:900px){
+    .hero{grid-template-columns:1fr;gap:1rem;padding-top:5.5rem;min-height:auto}
+    .board{max-width:460px;justify-self:center;aspect-ratio:1/0.9}
+    .profile,.skills{grid-template-columns:1fr;gap:1rem}
+    .groups{grid-template-columns:1fr}
+    .nav ul{gap:1rem}
+  }
+  @media (max-width:640px){
+    .nav ul{display:none}
+    .contact{grid-template-columns:1fr}
+    section.block{padding:4rem 0}
+    .timeline{--rail:0px;padding-left:2.25rem;gap:3rem}
+    .rail{left:.45rem}
+    .entry{grid-template-columns:1fr}
+    .entry::before{left:calc(-2.25rem + .45rem + 1px)}
+    .year{text-align:left;margin-bottom:.35rem}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation:none!important;transition:none!important}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#top" class="mark">N<span>Z</span></a>
+    <ul>
+      <li><a href="#profile">Profile</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Technical Skills</a></li>
+      <li><a href="#education">Education</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div>
+    <h1><span class="line"><span>Nicola</span></span><span class="line"><span>Zheng</span></span></h1>
+    <p class="role">Data Scientist &amp; GenAI Tech Lead</p>
+    <dl class="contact">
+      <div><dt>Location:</dt><dd>Milan, Italy</dd></div>
+      <div><dt>Email:</dt><dd><a href="mailto:nicola.zheng@gmail.com">nicola.zheng@gmail.com</a></dd></div>
+      <div><dt>LinkedIn:</dt><dd><a href="https://www.linkedin.com/in/nicolazheng" target="_blank" rel="noopener">@nicolazheng</a></dd></div>
+    </dl>
+  </div>
+  <div class="board">
+    <canvas id="galton" role="img" aria-label="Animated Galton board: falling beads build a normal distribution" title="Click to restart"></canvas>
+  </div>
+</header>
+
+<main>
+  <section class="block profile" id="profile">
+    <h2>Profile</h2>
+    <p>Data scientist with 6 years of experience at Accenture, grounded in a statistics background (MSc and BSc, University of Bologna) with a strong interest in informatics and statistics. Started in classical Machine Learning and Computer Vision, delivering production solutions for the automotive and resource industries, and since the rise of Generative AI I have led teams building RAG systems and multi-agent solutions based on MCP and A2A protocols, from prototype to deployment on Azure and Google Cloud.</p>
+  </section>
+
+  <section class="block" id="experience">
+    <h2>Experience</h2>
+    <div class="timeline">
+      <div class="rail"><b></b></div>
+
+      <article class="entry">
+        <div class="year">2024 — now</div>
+        <div class="body">
+          <h3>Consultant &amp; Tech Lead — Generative AI</h3>
+          <p class="org">Accenture, Milan</p>
+          <ul>
+            <li>Lead small cross-functional teams delivering Generative AI projects end to end: solution design, development, deployment and client-facing technical guidance.</li>
+            <li>Design RAG pipelines that turn heterogeneous documents into retrievable knowledge bases for question answering and search.</li>
+            <li>Orchestrate multi-agent systems (MCP, A2A) that gather and synthesize information from web research, documents and SQL tables.</li>
+            <li>Mentor junior colleagues and review code and architecture choices.</li>
+          </ul>
+          <div class="chips small">
+            <span class="chip">Azure</span><span class="chip">Google Cloud Platform</span><span class="chip">GenAI models</span><span class="chip">RAG</span><span class="chip">A2A Agent</span><span class="chip">MCP</span><span class="chip">Bash</span><span class="chip">K8s</span>
           </div>
         </div>
+      </article>
 
-        <div class="block">
-          <h2.block-title class="block-title">Profile</h2>
-          <p>Data scientist with 6 years of experience at Accenture, grounded in a statistics background (MSc and BSc, University of Bologna) with a strong
-  interest in informatics and statistics. Started in classical Machine Learning and Computer Vision, delivering production solutions for the automotive and
-  resource industries, and since the rise of Generative AI I have led teams building RAG systems and multi-agent solutions based on MCP and A2A protocols,
-  from prototype to deployment on Azure and Google Cloud.</p>
-        </div>
-
-        <div class="block">
-          <h2.block-title class="block-title">Languages</h2>
+      <article class="entry">
+        <div class="year">2020 — 2024</div>
+        <div class="body">
+          <h3>Analyst — Data Science</h3>
+          <p class="org">Accenture, Milan</p>
           <ul>
-            <li><strong>Italian</strong> — native</li>
-            <li><strong>English</strong> — proficient</li>
-            <li><strong>Chinese</strong> — basic</li>
-            <li><strong>French</strong> — basic</li>
+            <li>Built predictive maintenance models on real-time vehicle telemetry and geospatial data, powering customized alerts to improve after-sales customer service in the automotive sector.</li>
+            <li>Developed Computer Vision and OCR solutions on cloud services to classify documents and extract information automatically.</li>
+            <li>Processed large datasets with distributed pipelines, and exposed models as APIs and interactive dashboards.</li>
           </ul>
+          <div class="chips small">
+            <span class="chip">Azure</span><span class="chip">PySpark</span><span class="chip">Databricks</span><span class="chip">FastAPI</span><span class="chip">Keras</span><span class="chip">OpenCV</span><span class="chip">GluonCV</span><span class="chip">Plotly</span>
+          </div>
         </div>
+      </article>
 
-        <div class="block">
-          <h2.block-title class="block-title">Technical Skills</h2>
-          <p><strong>Languages &amp; data:</strong> Python, PySpark, SQL, Bash</p>
-          <p><strong>GenAI:</strong> RAG, LLM agents, MCP, A2A, prompt design and evaluation</p>
-          <p><strong>ML &amp; CV:</strong> Keras, Scikit-learn, OpenCV, GluonCV, OCR, predictive maintenance</p>
-          <p><strong>Cloud &amp; MLOps:</strong> Azure, Google Cloud Platform, Databricks, Kubernetes, FastAPI, Git</p>
-          <p><strong>Visualization:</strong> Plotly, Kibana, Seaborn</p>
-          <p><strong>Other:</strong> LaTeX</p>
+      <article class="entry">
+        <div class="year">2020</div>
+        <div class="body">
+          <h3>Data Science Intern</h3>
+          <p class="org">Whalebone, Brno</p>
+          <ul>
+            <li>Analyse DNS logs and Internet traffic, and visualized user and network behaviour in dashboards.</li>
+            <li>Clustered DNS queries and trained machine learning models to distinguish legitimate from malicious domains.</li>
+          </ul>
+          <div class="chips small">
+            <span class="chip">Python</span><span class="chip">Pandas</span><span class="chip">Keras</span><span class="chip">Scikit-learn</span><span class="chip">Seaborn</span><span class="chip">Kibana</span>
+          </div>
         </div>
-      </aside>
-
-      <main>
-        <section class="experience">
-          <h2.block-title class="block-title">Experience</h2>
-
-          <article class="exp-item">
-            <span class="dates">2024 — now</span>
-            <div>
-              <p><strong>Consultant &amp; Tech Lead — Generative AI</strong><br />Accenture, Milan</p>
-              <ul>
-                <li>Lead small cross-functional teams delivering Generative AI projects end to end: solution design, development, deployment and
-  client-facing technical guidance.</li>
-                <li>Design RAG pipelines that turn heterogeneous documents into retrievable knowledge bases for question answering and search.</li>
-                <li>Orchestrate multi-agent systems (MCP, A2A) that gather and synthesize information from web research, documents and SQL tables.</li>
-                <li>Mentor junior colleagues and review code and architecture choices.</li>
-              </ul>
-              <div class="tech-stack">
-                Azure / Google Cloud Platform / GenAI models / RAG / A2A Agent / MCP / Bash / K8s
-              </div>
-            </div>
-          </article>
-
-          <article class="exp-item">
-            <span class="dates">2020 — 2024</span>
-            <div>
-              <p><strong>Analyst — Data Science</strong><br />Accenture, Milan</p>
-              <ul>
-                <li>Built predictive maintenance models on real-time vehicle telemetry and geospatial data, powering customized alerts to improve after-sales
-  customer service in the automotive sector.</li>
-                <li>Developed Computer Vision and OCR solutions on cloud services to classify documentsand extract information automatically.</li>
-                <li>Processed large datasets with distributed pipelines, and exposed models as APIs andinteractive dashboards.</li>
-              </ul>
-              <div class="tech-stack">
-                Azure / PySpark / Databricks / FastAPI / Keras / OpenCV / GluonCV / Plotly
-              </div>
-            </div>
-          </article>
-
-          <article class="exp-item">
-            <span class="dates">2020</span>
-            <div>
-  from web research, documents and SQL tables.</li>
-                <li>Mentor junior colleagues and review code and architecture choices.</li>
-              </ul>
-              <div class="tech-stack">
-                Azure / Google Cloud Platform / GenAI models / RAG / A2A Agent / MCP / Bash / K8s
-              </div>
-            </div>
-          </article>
-
-          <article class="exp-item">
-            <span class="dates">2020 — 2024</span>
-            <div>
-              <p><strong>Analyst — Data Science</strong><br />Accenture, Milan</p>
-              <ul>
-                <li>Built predictive maintenance models on real-time vehicle telemetry and geospatial
-  data, powering customized alerts to improve after-sales customer service in the automotive
-  sector.</li>
-                <li>Developed Computer Vision and OCR solutions on cloud services to classify documents
-  and extract information automatically.</li>
-                <li>Processed large datasets with distributed pipelines, and exposed models as APIs and
-  interactive dashboards.</li>
-              </ul>
-              <div class="tech-stack">
-                Azure / PySpark / Databricks / FastAPI / Keras / OpenCV / GluonCV / Plotly
-              </div>
-            </div>
-          </article>
-
-          <article class="exp-item">
-            <span class="dates">2020</span>
-            <div>
-              <p><strong>Data Science Intern</strong><br />Whalebone, Brno</p>
-              <ul>
-                <li>Analyse DNS logs and Internet traffic, and visualized user and network behaviour in
-  dashboards.</li>
-                <li>Clustered DNS queries and trained machine learning models to distinguish legitimate
-  from malicious domains.</li>
-              </ul>
-              <div class="tech-stack">
-                Python / Pandas / Keras / Scikit-learn / Seaborn / Kibana
-              </div>
-            </div>
-          </article>
-        </section>
-
-        <section class="education">
-          <h2.block-title class="block-title">Education</h2>
-
-          <article class="edu-item">
-            <span class="dates">2018 — 2020</span>
-            <div>
-              <p><strong>MSc Statistical Sciences</strong><br />Alma Mater Studiorum — University of
-  Bologna</p>
-              <p>Data Science curriculum. Erasmus+ exchange in Brno, with a focus on cybersecurity.</p>
-            </div>
-          </article>
-
-          <article class="edu-item">
-            <span class="dates">2015 — 2018</span>
-            <div>
-              <p><strong>BSc Statistical Sciences</strong><br />Alma Mater Studiorum — University of
-  Bologna</p>
-              <p>Biodemographic curriculum.</p>
-            </div>
-          </article>
-        </section>
-      </main>
+      </article>
     </div>
-  </body>
-  </html>
+  </section>
+
+  <section class="block skills" id="skills">
+    <div>
+      <h2>Languages</h2>
+      <ul class="langs">
+        <li><strong>Italian</strong><span class="lvl">native</span><span class="meter"><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i></span></li>
+        <li><strong>English</strong><span class="lvl">proficient</span><span class="meter"><i class="f"></i><i class="f"></i><i class="f"></i><i></i></span></li>
+        <li><strong>Chinese</strong><span class="lvl">basic</span><span class="meter"><i class="f"></i><i></i><i></i><i></i></span></li>
+        <li><strong>French</strong><span class="lvl">basic</span><span class="meter"><i class="f"></i><i></i><i></i><i></i></span></li>
+      </ul>
+    </div>
+    <div>
+      <h2>Technical Skills</h2>
+      <div class="groups">
+        <div class="group"><h4>Languages &amp; data:</h4><div class="chips"><span class="chip">Python</span><span class="chip">PySpark</span><span class="chip">SQL</span><span class="chip">Bash</span></div></div>
+        <div class="group"><h4>GenAI:</h4><div class="chips"><span class="chip">RAG</span><span class="chip">LLM agents</span><span class="chip">MCP</span><span class="chip">A2A</span><span class="chip">prompt design and evaluation</span></div></div>
+        <div class="group"><h4>ML &amp; CV:</h4><div class="chips"><span class="chip">Keras</span><span class="chip">Scikit-learn</span><span class="chip">OpenCV</span><span class="chip">GluonCV</span><span class="chip">OCR</span><span class="chip">predictive maintenance</span></div></div>
+        <div class="group"><h4>Cloud &amp; MLOps:</h4><div class="chips"><span class="chip">Azure</span><span class="chip">Google Cloud Platform</span><span class="chip">Databricks</span><span class="chip">Kubernetes</span><span class="chip">FastAPI</span><span class="chip">Git</span></div></div>
+        <div class="group"><h4>Visualization:</h4><div class="chips"><span class="chip">Plotly</span><span class="chip">Kibana</span><span class="chip">Seaborn</span></div></div>
+        <div class="group"><h4>Other:</h4><div class="chips"><span class="chip">LaTeX</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="education">
+    <h2>Education</h2>
+    <div class="timeline">
+      <div class="rail"><b></b></div>
+      <article class="entry">
+        <div class="year">2018 — 2020</div>
+        <div class="body">
+          <h3>MSc Statistical Sciences</h3>
+          <p class="org">Alma Mater Studiorum — University of Bologna</p>
+          <p class="note">Data Science curriculum. Erasmus+ exchange in Brno, with a focus on cybersecurity.</p>
+        </div>
+      </article>
+      <article class="entry">
+        <div class="year">2015 — 2018</div>
+        <div class="body">
+          <h3>BSc Statistical Sciences</h3>
+          <p class="org">Alma Mater Studiorum — University of Bologna</p>
+          <p class="note">Biodemographic curriculum.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <span class="mark">N<span>Z</span></span>
+  <a href="#top" class="top">Back to top ↑</a>
+</footer>
+
+<script>
+(() => {
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ================= Galton board ================= */
+  const cv = document.getElementById('galton');
+  const ctx = cv.getContext('2d');
+  const ROWS = 12, NMAX = 650;
+  const C = getComputedStyle(document.documentElement);
+  const col = n => C.getPropertyValue(n).trim();
+  const INK = col('--ink'), VIOLET = col('--violet'), AMBER = col('--amber'), MIST = col('--mist'), MUTED = col('--muted');
+
+  let W, H, dx, dy, top, binTop, bottom, unit, cx, pegR, ballR;
+  let balls = [], counts, n, spawnAcc, hold;
+  const reset = () => { balls = []; counts = new Array(ROWS + 1).fill(0); n = 0; spawnAcc = 0; hold = 0; };
+  reset();
+
+  function layout() {
+    const r = cv.getBoundingClientRect();
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    W = r.width; H = r.height;
+    cv.width = W * dpr; cv.height = H * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    dx = W * 0.9 / (ROWS + 1);
+    dy = Math.min(dx * 0.82, H * 0.5 / ROWS);
+    top = H * 0.07;
+    binTop = top + (ROWS - 1) * dy + dy * 0.9;
+    bottom = H - 2;
+    cx = W / 2;
+    pegR = Math.max(1.6, dx * 0.07);
+    ballR = Math.max(2.2, dx * 0.13);
+    unit = (bottom - binTop) * 0.9 / (NMAX * 0.2256);
+  }
+  const pegX = (r, k) => cx + (k - r / 2) * dx;
+  const pegY = r => top + r * dy;
+  const binX = j => cx + (j - ROWS / 2) * dx;
+
+  function spawn() {
+    balls.push({ level: 0, k: 0, t: 0, dur: 0.32,
+      ax: cx + (Math.random() - .5) * 2, ay: top - dy * 1.2,
+      bx: pegX(0, 0), by: pegY(0) - pegR - ballR, hop: 0 });
+  }
+
+  function step(b, dt) {
+    b.t += dt / b.dur;
+    if (b.t < 1) return true;
+    b.ax = b.bx; b.ay = b.by; b.t = 0;
+    if (b.level === ROWS) {               // landed
+      counts[b.k]++; n++; return false;
+    }
+    b.k += Math.random() < .5 ? 0 : 1;
+    if (b.level < ROWS - 1) {
+      b.level++;
+      b.bx = pegX(b.level, b.k); b.by = pegY(b.level) - pegR - ballR;
+      b.dur = 0.16; b.hop = dy * 0.38;
+    } else {
+      b.level = ROWS;
+      b.bx = binX(b.k);
+      b.by = bottom - counts[b.k] * unit - ballR;
+      b.dur = 0.28 + (b.by - b.ay) / H * 0.5; b.hop = dy * 0.2;
+    }
+    return true;
+  }
+
+  function pos(b) {
+    const t = b.t;
+    const e = 1 - Math.pow(1 - t, 2);
+    return [b.ax + (b.bx - b.ax) * e, b.ay + (b.by - b.ay) * t * t - Math.sin(Math.PI * t) * b.hop];
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+    // bins
+    ctx.strokeStyle = MIST; ctx.lineWidth = 1;
+    for (let j = 0; j <= ROWS + 1; j++) {
+      const x = binX(j) - dx / 2;
+      ctx.beginPath(); ctx.moveTo(x, binTop + dy * 0.4); ctx.lineTo(x, bottom); ctx.stroke();
+    }
+    ctx.beginPath(); ctx.moveTo(binX(0) - dx / 2, bottom); ctx.lineTo(binX(ROWS) + dx / 2, bottom); ctx.stroke();
+    // bars
+    ctx.fillStyle = VIOLET;
+    for (let j = 0; j <= ROWS; j++) {
+      const h = counts[j] * unit;
+      if (h <= 0) continue;
+      const w = dx * 0.72, x = binX(j) - w / 2, y = bottom - h, rr = Math.min(w / 2, 6, h);
+      ctx.beginPath();
+      ctx.moveTo(x, bottom); ctx.lineTo(x, y + rr);
+      ctx.quadraticCurveTo(x, y, x + rr, y); ctx.lineTo(x + w - rr, y);
+      ctx.quadraticCurveTo(x + w, y, x + w, y + rr); ctx.lineTo(x + w, bottom);
+      ctx.fill();
+    }
+    // pegs
+    ctx.fillStyle = INK; ctx.globalAlpha = .55;
+    for (let r = 0; r < ROWS; r++) for (let k = 0; k <= r; k++) {
+      ctx.beginPath(); ctx.arc(pegX(r, k), pegY(r), pegR, 0, Math.PI * 2); ctx.fill();
+    }
+    ctx.globalAlpha = 1;
+    // normal curve, scaled to current n
+    if (n > 15) {
+      const mu = ROWS / 2, s2 = ROWS / 4, norm = 1 / Math.sqrt(2 * Math.PI * s2);
+      ctx.strokeStyle = INK; ctx.lineWidth = 1.6; ctx.setLineDash([5, 5]);
+      ctx.beginPath();
+      for (let i = 0; i <= 160; i++) {
+        const x = -0.6 + (ROWS + 1.2) * i / 160;
+        const y = bottom - n * norm * Math.exp(-((x - mu) ** 2) / (2 * s2)) * unit;
+        const px = cx + (x - mu) * dx;
+        i ? ctx.lineTo(px, y) : ctx.moveTo(px, y);
+      }
+      ctx.stroke(); ctx.setLineDash([]);
+    }
+    // balls
+    ctx.fillStyle = AMBER;
+    for (const b of balls) {
+      const [x, y] = pos(b);
+      ctx.beginPath(); ctx.arc(x, y, ballR, 0, Math.PI * 2); ctx.fill();
+    }
+    // counter
+    ctx.fillStyle = MUTED;
+    ctx.font = `500 ${Math.max(12, W * 0.028)}px Figtree, sans-serif`;
+    ctx.fillText(`n = ${n}`, 4, Math.max(14, W * 0.03));
+  }
+
+  let last = 0, running = true, raf;
+  function frame(ts) {
+    const dt = Math.min(0.05, (ts - last) / 1000 || 0); last = ts;
+    if (n + balls.length < NMAX) {
+      spawnAcc += dt;
+      const every = n < 40 ? 0.12 : 0.045;
+      while (spawnAcc > every && n + balls.length < NMAX) { spawn(); spawnAcc -= every; }
+    } else if (!balls.length) {
+      hold += dt;
+      if (hold > 4) reset();
+    }
+    balls = balls.filter(b => step(b, dt));
+    draw();
+    if (running) raf = requestAnimationFrame(frame);
+  }
+
+  function staticFill() {
+    const binom = j => { let c = 1; for (let i = 0; i < j; i++) c = c * (ROWS - i) / (i + 1); return c / 2 ** ROWS; };
+    counts = counts.map((_, j) => Math.round(NMAX * binom(j)));
+    n = counts.reduce((a, b) => a + b, 0);
+    draw();
+  }
+
+  layout();
+  if (reduce) staticFill();
+  else {
+    raf = requestAnimationFrame(frame);
+    new IntersectionObserver(([e]) => {
+      if (e.isIntersecting && !running) { running = true; last = performance.now(); raf = requestAnimationFrame(frame); }
+      else if (!e.isIntersecting) { running = false; cancelAnimationFrame(raf); }
+    }).observe(cv);
+  }
+  cv.addEventListener('click', () => { reset(); if (reduce) staticFill(); });
+  let rt; addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(() => { balls = []; layout(); reduce ? staticFill() : draw(); }, 120); });
+
+  /* ================= Timeline progress ================= */
+  const lines = [...document.querySelectorAll('.timeline')];
+  function onScroll() {
+    const vh = innerHeight, mark = vh * 0.62;
+    for (const tl of lines) {
+      const r = tl.getBoundingClientRect();
+      const p = Math.max(0, Math.min(1, (mark - r.top) / r.height));
+      tl.querySelector('.rail b').style.setProperty('--p', reduce ? 1 : p);
+      tl.querySelectorAll('.entry').forEach(en => en.classList.toggle('reached', reduce || en.getBoundingClientRect().top < mark));
+    }
+    document.getElementById('nav').classList.toggle('scrolled', scrollY > 10);
+    // active nav link
+    let current = '';
+    document.querySelectorAll('main section[id]').forEach(s => { if (s.getBoundingClientRect().top < vh * 0.4) current = s.id; });
+    document.querySelectorAll('.nav ul a').forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + current));
+  }
+  addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  /* ================= Language meters ================= */
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } }), { threshold: .6 });
+  document.querySelectorAll('.langs li').forEach(li => io.observe(li));
+
+  /* ================= Skill cross-highlight ================= */
+  const alias = { 'k8s': 'kubernetes', 'a2a agent': 'a2a' };
+  const chips = [...document.querySelectorAll('.chip')];
+  chips.forEach(c => {
+    const t = c.textContent.trim().toLowerCase();
+    c.dataset.k = alias[t] || t;
+  });
+  const counts2 = chips.reduce((m, c) => (m[c.dataset.k] = (m[c.dataset.k] || 0) + 1, m), {});
+  const on = c => {
+    if (counts2[c.dataset.k] < 2) return;
+    document.body.classList.add('filtering');
+    chips.forEach(x => x.classList.toggle('match', x.dataset.k === c.dataset.k));
+  };
+  const off = () => { document.body.classList.remove('filtering'); chips.forEach(x => x.classList.remove('match')); };
+  chips.forEach(c => {
+    if (counts2[c.dataset.k] > 1) { c.tabIndex = 0; c.style.cursor = 'pointer'; }
+    c.addEventListener('mouseenter', () => on(c));
+    c.addEventListener('mouseleave', off);
+    c.addEventListener('focus', () => on(c));
+    c.addEventListener('blur', off);
+  });
+})();
+</script>
+</body>
+</html>
